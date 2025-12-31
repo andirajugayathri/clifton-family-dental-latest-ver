@@ -256,15 +256,15 @@ body {
 }
 
 .btn-default.btn-highlighted:hover {
-	color: var(--primary-color);
+	color: var(--white-color);
 }
 
 .btn-default.btn-highlighted:hover:before {
-	background-color: var(--accent-color);
+	background-color: var(--white-color);
 }
 
 .btn-default.btn-highlighted::after {
-	background-color: var(--white-color);
+	background-color: var(--primary-color);
 }
 
 #magic-cursor {
@@ -1720,7 +1720,7 @@ color: var(--primary-color);
 	width: 100%;
 	max-width: 500px;
 	margin: 0 auto;
-	margin-top: 30px;
+	/* margin-top: 30px; */
 	text-align: center;
 }
 
