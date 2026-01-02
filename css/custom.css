@@ -512,10 +512,6 @@ body.home-page .main-menu ul li a:focus {
 	color: var(--primary-color);
 }
 
-color: var(--primary-color);
-/* Or keep it accent/white? Assuming hover can still be brand color */
-}
-
 .navbar {
 	padding: 10px 0;
 	align-items: center;
@@ -621,7 +617,7 @@ color: var(--primary-color);
 }
 
 .main-menu ul ul li a {
-	color: var(--accent-color)!important;
+	color: var(--accent-color) !important;
 	padding: 10px 25px !important;
 	font-size: 15px;
 	font-weight: 500;
@@ -1842,35 +1838,94 @@ color: var(--primary-color);
 	width: 106%;
 }
 
+/* --- Layered Depth Typography Counter (Non-Card) --- */
 .our-counter {
-	padding: 50px 0 0px;
+	padding: 50px 0;
+	background: var(--white-color);
+	position: relative;
+	overflow: hidden;
 }
 
-.counter-item {
-	height: calc(100% - 30px);
-	margin-bottom: 30px;
+.counter-layered-item {
+	position: relative;
+	text-align: center;
+	padding: 40px 20px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.4s ease;
 }
 
-.counter-title {
-	border-bottom: 1px solid var(--dark-divider-color);
-	margin-bottom: 20px;
-	padding-bottom: 20px;
+.watermark-num {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 150px;
+	font-weight: 900;
+	color: rgba(236, 114, 35, 0.05);
+	/* Very light version of primary color */
+	line-height: 1;
+	z-index: 1;
+	user-select: none;
+	transition: all 0.5s ease;
+	font-family: var(--default-font);
 }
 
-.counter-title h2 {
-	font-size: 44px;
+.counter-layered-item:hover .watermark-num {
+	transform: translate(-50%, -40%) scale(1.1);
+	color: rgba(236, 114, 35, 0.08);
+}
+
+.active-content {
+	position: relative;
+	z-index: 2;
+	transition: all 0.4s ease;
+}
+
+.counter-layered-item:hover .active-content {
+	transform: translateY(-10px);
+}
+
+.active-content i {
+	font-size: 30px;
+	color: var(--primary-color);
+	margin-bottom: 10px;
+	display: block;
+}
+
+.active-content .counter-number {
+	display: block;
+	font-size: 48px;
+	font-weight: 800;
+	color: var(--accent-color);
+	line-height: normal;
 	margin-bottom: 5px;
 }
 
-.counter-title h3 {
-	font-size: 20px;
+.active-content .counter-label {
+	display: block;
+	font-size: 14px;
 	font-weight: 600;
-	text-transform: capitalize;
-	color: var(--accent-color) !important;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: var(--text-color);
 }
 
-.counter-content p {
-	margin: 0;
+@media (max-width: 991px) {
+	.watermark-num {
+		font-size: 100px;
+	}
+
+	.active-content .counter-number {
+		font-size: 38px;
+	}
+
+	.counter-layered-item {
+		padding: 30px 10px;
+	}
 }
 
 /************************************/
