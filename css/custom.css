@@ -4585,7 +4585,7 @@ footer.main-footer {
 	}
 
 	.our-services {
-		padding: 50px 0 0;
+		padding: 20px 0 0!important;
 	}
 
 	.service-item {
@@ -7113,7 +7113,7 @@ textarea.form-control-custom {
 	}
 
 	.video-wrapper {
-		min-height: 250px;
+		min-height: 0;
 		margin-bottom: 20px;
 	}
 }
